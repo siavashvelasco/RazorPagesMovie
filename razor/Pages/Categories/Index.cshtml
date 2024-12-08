@@ -1,0 +1,56 @@
+﻿@page
+@model razor.Pages.Categories.IndexModel
+<partial name="_Notifications" />
+
+<h1>Category index</h1>
+
+
+
+
+<div>
+	<div>
+		<div>
+			<h2>
+				Category list
+			</h2>
+		</div>
+		<div>
+			<div>
+				<a asp-page="/Categories/Create" class="btn btn-primary"><i class="bi bi-plus"></i> Create </a>
+			</div>
+		</div>
+	</div>
+
+</div>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Order by</th>
+			<th>edit or Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		@foreach (var i in Model.CategoryList)
+		{
+			<tr>
+				<td>@i.Id</td>
+				<td>@i.Name</td>
+				<td>@i.DisplayOrder</td>
+				<td>
+					<div>
+						<a asp-page="/Categories/Edit" class="btn btn-outline-success" asp-route-id="@i.Id"><i class="bi bi-pencil-square"></i> Edit</a>
+						<a asp-page="/Categories/Delete" class="btn btn-outline-danger" asp-route-id="@i.Id"><i class="bi bi-pencil-square"></i> Delete</a>
+					</div>
+				</td>
+
+
+			</tr>
+
+		}
+	</tbody>
+
+
+</table>

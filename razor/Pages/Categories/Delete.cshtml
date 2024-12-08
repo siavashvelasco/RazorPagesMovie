@@ -1,0 +1,27 @@
+﻿@page
+@model razor.Pages.Categories.DeleteModel
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div asp-validation-summary="ModelOnly"></div>
+		<div class="mb-3">
+			<label asp-for="Category.Id"></label>
+			<input asp-for="Category.Id" type="text" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.Name"></label>
+			<input asp-for="Category.Name" type="text" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.DisplayOrder"></label>
+			<input asp-for="Category.DisplayOrder" disabled type="text" class="form-control" />
+
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px" >Delete</button>
+	</div>
+
+</form>
+@section scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
